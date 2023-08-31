@@ -1417,6 +1417,8 @@ class Trainer:
 
         # Note: in torch.distributed mode, there's no point in wrapping the model
         # inside a DistributedDataParallel as we'll be under `no_grad` anyways.
+
+        # TODO: should do wrapping on our own if we are using fsdp for inference
         if not training:
             return model
 
